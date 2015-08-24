@@ -1,0 +1,55 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CE.FizzBuzz
+{
+    
+    class Program
+
+    {
+        
+        static void Main(string[] args)
+        {
+            //string line = "2 5 10"; should not be included when submitting to CodeEval using the online editor.
+            string line = " 2 5 10";
+
+            string[] array = line.Split();
+            int i;
+            int X = int.Parse(array[0]);
+            int Y = int.Parse(array[1]);
+            int N = int.Parse(array[2]);
+            string store = "";
+            string result;
+            for (i = 1; i <= N; i++)
+            {
+
+
+                 if (i % X == 0 && i % Y == 0)
+                {
+                      result = "FB";
+                     }
+                    else if (i % X == 0)
+                    {
+                        result = "F";
+                    }
+                    else if (i % Y == 0)
+                    {
+                        result = "B";
+                    }
+                    else
+                    {
+                        result = Convert.ToString(i);
+                    }
+
+                store = store + " " + result;
+
+            }
+            string newStore = store.Trim();
+            Console.WriteLine(newStore);
+
+        }
+        }
+    }
